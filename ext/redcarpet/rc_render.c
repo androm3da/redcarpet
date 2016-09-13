@@ -384,7 +384,7 @@ static VALUE rb_redcarpet_rbase_alloc(VALUE klass)
 {
 	struct rb_redcarpet_rndr *rndr = ALLOC(struct rb_redcarpet_rndr);
 	memset(rndr, 0x0, sizeof(struct rb_redcarpet_rndr));
-	return Data_Wrap_Struct(klass, rb_redcarpet_rbase_mark, rndr_deallocate, rndr);
+	return Data_Wrap_Struct(klass, rb_redcarpet_rbase_mark, NULL, rndr);
 }
 
 static void rb_redcarpet__overload(VALUE self, VALUE base_class)

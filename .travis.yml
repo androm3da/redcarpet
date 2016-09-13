@@ -10,7 +10,7 @@ addons:
 before_install:
   - gem uninstall bundler -v 1.6.9
   - gem install bundler -v 1.11.2
-install: travis_retry bundle install --without=benchmark --with-cflags=\"-fsanitize=address\"
+install: travis_retry bundle install --without=benchmark --with-cflags=\"-fsanitize=address\" --cc clang
 
 rvm:
   - 1.9.2
